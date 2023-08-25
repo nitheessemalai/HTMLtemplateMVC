@@ -11,13 +11,14 @@ namespace HTMLtemplateMVC.Controllers
 
     {
 
+
         // GET: HTMLtemplateController1
-        public ActionResult client()
+        public ActionResult about()
         {
             return View();
         }
 
-        public ActionResult about()
+        public ActionResult client()
         {
             return View();
         }
