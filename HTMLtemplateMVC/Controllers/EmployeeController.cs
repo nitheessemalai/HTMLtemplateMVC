@@ -1,4 +1,5 @@
-﻿using LibraryHTMLtemplate.EmplyoeeModel;
+﻿using HTMLtemplateMVC.Models;
+using LibraryHTMLtemplate.EmplyoeeModel;
 using LibraryHTMLtemplate.RepositoryEmployee;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +57,7 @@ namespace HTMLtemplateMVC.Controllers
                 {
 
                     obj.Insertsp(emp);
-                  
+                    emp.locationModels = obj1.locationin();
 
                    return RedirectToAction(nameof(List));
                 }
@@ -71,9 +72,9 @@ namespace HTMLtemplateMVC.Controllers
 
                
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View("Error", new ErrorViewModel { CustomMessage =" Error in Employee Insert" , ActualMessage = ex.Message }); ;
             }
         }
 
@@ -81,6 +82,8 @@ namespace HTMLtemplateMVC.Controllers
         public ActionResult Edit(int id)
         {
             var result = obj.selectid(id);
+            result.locationModels = obj1.locationin();
+
             return View("Edit", result);
           }
     
@@ -96,9 +99,9 @@ namespace HTMLtemplateMVC.Controllers
             obj.updatesp(emp);
             return RedirectToAction(nameof(List));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return View("error",new ErrorViewModel());
             }
         }
 
@@ -120,9 +123,9 @@ namespace HTMLtemplateMVC.Controllers
                 obj.deletesp(id);
                 return RedirectToAction(nameof(List));
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View("error", new ErrorViewModel());
             }
         }
     }
