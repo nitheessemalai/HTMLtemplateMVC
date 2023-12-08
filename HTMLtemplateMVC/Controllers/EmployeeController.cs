@@ -20,7 +20,8 @@ namespace HTMLtemplateMVC.Controllers
         public EmployeeController()
         {
             obj = new Repositoryemployee();
-            obj1 = new locationrepository();
+            //dropdwon
+             obj1 = new locationrepository();
 
         }
 

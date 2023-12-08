@@ -45,8 +45,8 @@ namespace LibraryHTMLtemplate.RepositoryEmployee
             }
 
         }
-        public ModelEmployee selectid (int id)
-        {
+        public  ModelEmployee selectid (int id)
+        { 
             try
             {
                 

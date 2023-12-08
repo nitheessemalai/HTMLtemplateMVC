@@ -12,6 +12,7 @@ namespace LibraryHTMLtemplate.EmplyoeeModel
     {
         public ModelEmployee()
         {
+            //drop dwon
             locationModels = new List<locationModel>();
         }
         public int id { get; set; }
@@ -35,5 +36,6 @@ namespace LibraryHTMLtemplate.EmplyoeeModel
 
 
         public List<locationModel> locationModels { get; set; }
+        //dropdwon
     }
 }

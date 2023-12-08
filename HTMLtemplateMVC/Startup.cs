@@ -50,7 +50,7 @@ namespace HTMLtemplateMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=HTMLtemplate}/{action=client}/{id?}");
+                    pattern: "{controller=Employee}/{action=List}/{id?}");
             });
         }
     }
